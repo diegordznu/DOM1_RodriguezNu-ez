@@ -3,6 +3,8 @@ const emailInput = document.getElementById('emailInput');
 const btnGenerar = document.getElementById('btnGenerar');
 const resultadoContenedor = document.getElementById('resultadoContenedor');
 const tokenOutput = document.getElementById('tokenOutput');
+const nombre_alumno = "DIEGO RODRIGUEZ NUÑEZ terminó: ";
+const fecha = new Date();
 
 // 2. Escuchar el evento de clic en el botón
 btnGenerar.addEventListener('click', () => {
@@ -11,6 +13,7 @@ btnGenerar.addEventListener('click', () => {
     // Validación simple mediante el DOM
     if (correo === "" || !correo.includes('@')) {
         alert("Por favor, introduce un correo electrónico válido.");
+        console.error("Correo electrónico inválido: " + correo);
         return;
     }
 
@@ -30,4 +33,5 @@ btnGenerar.addEventListener('click', () => {
     // Opcional: Cambiamos el estilo dinámicamente mediante el DOM para dar feedback visual
     tokenOutput.style.backgroundColor = "#e8f8f5"; 
     tokenOutput.style.borderLeftColor = "#2ecc71"; // Cambia a verde al completarse
+    console.info(nombre_alumno+fecha);
 });
